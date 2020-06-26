@@ -53,7 +53,7 @@
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label"><?php echo $MSG_EMAIL?></label>
-          <div class="col-sm-4"><input name="email" class="form-control" placeholder="<?php echo $MSG_EMAIL?>" type="text"  required ></div>
+          <div class="col-sm-4"><input name="email" class="form-control" placeholder="<?php echo $MSG_EMAIL?>" type="text" ></div>
         </div>
 
         <?php if($OJ_VCODE){?>
@@ -74,9 +74,8 @@
           </div>
           <div class="col-sm-2">
             <button name="submit" type="reset" class="btn btn-default btn-block"><?php echo $MSG_RESET; ?></button>
-          </div>
+	  </div>
         </div>
-        
       </form>
       
     </div>

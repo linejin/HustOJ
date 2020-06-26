@@ -61,13 +61,13 @@ exps[7]="检查数组越界的情况";
 function explain(){
 //alert("asdf");
 var errmsg=$("#errtxt").text();
-var expmsg="辅助解释：<br><hr>";
+var expmsg="Error<br><hr>";
 for(var i=0;i<pats.length;i++){
 var pat=pats[i];
 var exp=exps[i];
 var ret=pat.exec(errmsg);
 if(ret){
-expmsg+=ret+":"+exp+"<br><hr />";
+expmsg+=ret+":"+pat+"<br><hr />";
 }
 }
 document.getElementById("errexp").innerHTML=expmsg;

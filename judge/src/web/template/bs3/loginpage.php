@@ -44,6 +44,9 @@
 	<a class="btn btn-default btn-block" href="lostpassword.php"><?php echo $MSG_LOST_PASSWORD; ?></a>
 	</div>
 	</div>
+	<div class="form-group">
+	<div class="col-sm-offset-4 col-sm-4">
+	<a class="btn btn-default btn-block" href="registerpage.php" ><?php echo $MSG_REGISTER; ?></a>
 </form>					
       </div>
 	<script src="<?php echo $OJ_CDN_URL?>include/md5-min.js"></script>

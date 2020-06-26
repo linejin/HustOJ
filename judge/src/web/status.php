@@ -115,7 +115,7 @@ if (isset($_GET['cid'])) {
     $end_time = strtotime($row[2]);       
     
     if (time()<$end_time && stripos($title,$OJ_NOIP_KEYWORD)!==false) {
-      $view_errors =  "<h2> $MSG_NOIP_WARNING <a href=\"contest.php?cid=$cid\">返回比赛</a></h2>";
+      //$view_errors =  "<h2> $MSG_NOIP_WARNING <a href=\"contest.php?cid=$cid\">返回比赛</a></h2>";
       require("template/".$OJ_TEMPLATE."/error.php");
       exit(0);
     }
@@ -393,13 +393,13 @@ for ($i=0; $i<$rows_cnt; $i++) {
     $view_status[$i][3] .= "$mark</a>";
   }
   else if ((((intval($row['result'])==8 || intval($row['result'])==7 || intval($row['result'])==5 || intval($row['result'])==6) && ($OJ_SHOW_DIFF || isset($_SESSION[$OJ_NAME.'_'.'source_browser']))) || $row['result']==10 || $row['result']==13) && ((isset($_SESSION[$OJ_NAME.'_'.'user_id']) && $row['user_id']==$_SESSION[$OJ_NAME.'_'.'user_id']) || isset($_SESSION[$OJ_NAME.'_'.'source_browser']))) {
-    $view_status[$i][3] .= "<a href='reinfo.php?sid=".$row['solution_id']."' class='".$judge_color[$row['result']]."' title='$MSG_Tips'>".$judge_result[$row['result']]."";
+    $view_status[$i][3] .= "<a ' class='".$judge_color[$row['result']]."' title='$MSG_Tips'>".$judge_result[$row['result']]."";
     $view_status[$i][3] .= "$mark</a>";
   }
   else {
     if (!$lock || $lock_time>$row['in_date'] || $row['user_id']==$_SESSION[$OJ_NAME.'_'.'user_id']) {
       if ($OJ_SIM && $row['sim']>80 && $row['sim_s_id']!=$row['s_id']) {
-        $view_status[$i][3] .= "<a href='reinfo.php?sid=".$row['solution_id']."' class='".$judge_color[$row['result']]."'  title='$MSG_Tips'>*".$judge_result[$row['result']]."";
+        $view_status[$i][3] .= "<a class='".$judge_color[$row['result']]."'  title='$MSG_Tips'>*".$judge_result[$row['result']]."";
 
         if ($row['result']!=4 && isset($row['pass_rate']) && $row['pass_rate']>0 && $row['pass_rate']<.98)
           $view_status[$i][3] .= "$mark</a>";
@@ -418,7 +418,7 @@ for ($i=0; $i<$rows_cnt; $i++) {
         }
       }
       else {
-        $view_status[$i][3] .= "<a href='reinfo.php?sid=".$row['solution_id']."' class='".$judge_color[$row['result']]."'  title='$MSG_Tips'>".$judge_result[$row['result']]."";
+        $view_status[$i][3] .= "<a class='".$judge_color[$row['result']]."'  title='$MSG_Tips'>".$judge_result[$row['result']]."";
         $view_status[$i][3] .= "$mark</a>";
       }
     }
@@ -449,13 +449,15 @@ for ($i=0; $i<$rows_cnt; $i++) {
 
     //echo $row['result'];
     if (!(isset($_SESSION[$OJ_NAME.'_'.'user_id']) && strtolower($row['user_id'])==strtolower($_SESSION[$OJ_NAME.'_'.'user_id']) 
-    || isset($_SESSION[$OJ_NAME.'_'.'source_browser']))) {
+	    || isset($_SESSION[$OJ_NAME.'_'.'source_browser'])
+    	    || isset($_SESSION[$OJ_NAME.'_'.'administrator'])
+    ) ) {
       $view_status[$i][6] = $language_name[$row['language']];
     }
     else {
       if(time() < $end_time
 		||(isset($_SESSION[$OJ_NAME.'_'.'user_id']) && strtolower($row['user_id'])==strtolower($_SESSION[$OJ_NAME.'_'.'user_id'])) 
-		||isset($_SESSION[$OJ_NAME.'_'.'source_browser'])
+		||!isset($_SESSION[$OJ_NAME.'_'.'source_browser'])
 	)
         $view_status[$i][6] = "<a target=_self href=showsource.php?id=".$row['solution_id'].">".$language_name[$row['language']]."</a>";
       else
@@ -464,7 +466,7 @@ for ($i=0; $i<$rows_cnt; $i++) {
       if ($row["problem_id"]>0) {
         if ($row['contest_id']>0) {
          if (time() < $end_time
-		||isset($_SESSION[$OJ_NAME.'_'.'source_browser'])
+		||!isset($_SESSION[$OJ_NAME.'_'.'source_browser'])
 	 )
             $view_status[$i][6] .= "/<a target=_self href=\"submitpage.php?cid=".$row['contest_id']."&pid=".$row['num']."&sid=".$row['solution_id']."\">Edit</a>";
           else
