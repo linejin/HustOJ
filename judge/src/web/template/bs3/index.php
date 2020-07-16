@@ -58,7 +58,7 @@
 			}, {
 				label: "<?php echo $MSG_SOVLED?>",
 				data: d2,
-				bars: {
+				lines: {
 					show: true
 				}
 			} ], {

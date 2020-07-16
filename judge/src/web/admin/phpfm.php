@@ -3415,7 +3415,7 @@ function dir_list_form() {
             <input type=button onclick=\"test_prompt(2)\" value=\"".et('CreateArq')."\">
             <input type=button onclick=\"upload()\" value=\"".et('Upload')."\">
             <b>$ip</b>
-            <b><a href='https://muzea-demo.github.io/random-data/' target='_blank'>".et('Random-data')."</a></b>
+            <!--<b><a href='https://muzea-demo.github.io/random-data/' target='_blank'>".et('Random-data')."</a></b>-->
             </nobr>";
         $uplink = "";
         if ($current_dir != $fm_current_root){

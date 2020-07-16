@@ -141,18 +141,18 @@ function ceinfo(){
 
 	//alert("asdf");
 	var errmsg=$("#errtxt").text();
-	var expmsg="辅助解释：";
+	var expmsg="ERROR MASSAGE : ";
 	let keyword=$("#errtxt").find(".number1").text();
         //console.log(keyword);
         keyword=encodeURIComponent(keyword);
         //console.log(keyword);
-        expmsg+="<br><a target='_blank' href='https://www.baidu.com/s?wd="+keyword+"'>问问度娘</a><hr>\n";
+        //expmsg+="<br><a target='_blank' href='https://www.baidu.com/s?wd="+keyword+"'>问问度娘</a><hr>\n";
 	for(var i=0;i<pats.length;i++){
 		var pat=pats[i];
-		var exp=exps[i];
+		//var exp=exps[i];
 		var ret=pat.exec(errmsg);
 		if(ret){
-		expmsg+=ret+":"+exp+"<hr>\n";
+		expmsg+=ret+":<hr>\n";
 		}
 	}
 	$("#errexp").html(expmsg);

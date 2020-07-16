@@ -166,16 +166,16 @@ exps[63]="OJ中public类只能是Main";
 function explain(){
 //alert("asdf");
 var errmsg=$("#errtxt").text();
-var expmsg="辅助解释：<br><hr>";
+var expmsg="";//"辅助解释：<br><hr>";
 for(var i=0;i<pats.length;i++){
 var pat=pats[i];
 var exp=exps[i];
 var ret=pat.exec(errmsg);
 if(ret){
-expmsg+=ret+":"+exp+"<br><hr>";
+expmsg+=ret+":&nbsp<br><br><hr>";
 }
 }
-document.getElementById("errexp").innerHTML=expmsg;
+//document.getElementById("errexp").innerHTML=expmsg;
 //alert(expmsg);
 }
 </script>
