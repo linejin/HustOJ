@@ -738,20 +738,22 @@ int main(int argc, char** argv) {
 		if(oj_udp_ret<0) 
 			printf("udp fd open failed! \n");
 	}
-	printf("finish_udp and start_siganl");
+	printf("finish_udp and start_siganl\n");
 	signal(SIGQUIT, call_for_exit);
 	signal(SIGINT, call_for_exit);
 	signal(SIGTERM, call_for_exit);
-	printf("finish_signal");
+	printf("finish_signal\n");
 	int j = 1;
 	int n = 0;
 	while (!STOP) {			// start to run until call for exit
 		n=0;
+		printf("check point 1\n");
 		while (j && (http_judge
 #ifdef _mysql_h
 			 || !init_mysql()
 #endif
 		)) {
+			printf("check point 2\n");
 
 			j = work();
 			n+=j;
@@ -763,18 +765,22 @@ int main(int argc, char** argv) {
 
 			if(ONCE) break;
 		}
+		printf("start turbo_mode2\n");
 		turbo_mode2();
+		printf("finish turbo_mode2\n");
 		if(ONCE) break;
                 if(n==0){
 			printf("workcnt:%d\n",workcnt);
 			if(oj_udp&&oj_udp_ret==0){
 				if(STOP) return 1;
 				wait_udp_msg(oj_udp_fd);
-                        	if(DEBUG) printf("udp job ... \n");
+                        	//if(DEBUG) 
+					printf("udp job ... \n");
 
 			}else{
                         	sleep(sleep_time);
-                        	if(DEBUG) printf("sleeping ... %ds \n",sleep_time);
+                        	//if(DEBUG) 
+					printf("sleeping ... %ds \n",sleep_time);
 			}
                 }
 		j = 1;
