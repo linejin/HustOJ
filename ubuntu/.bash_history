@@ -63,3 +63,16 @@ mysql -u root -p
 sudo su
 aaaaaaaaaaaaaaaaaaaaaaaaaaaa
 sudo su
+llllllllllllllllllllllllllllllllllllllllllllllllllllll
+s
+ls
+sudo su
+lsudo su
+sudo su
+free -m
+ls
+cd hustoj/
+ls
+sudo su
+ls
+sudo su

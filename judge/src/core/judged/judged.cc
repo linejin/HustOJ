@@ -523,11 +523,13 @@ int work() {
 	/* exec the submit */
 	for (int j = 0; jobs[j] > 0; j++) {
 		runid = jobs[j];
+		printf("runid : %d\n",jobs[j]);
 		if (runid % oj_tot != oj_mod)
 			continue;
 		if (workcnt >= max_running) {           // if no more client can running
 			tmp_pid = waitpid(-1, NULL, WNOHANG);     // wait 4 one child exit
-			if (DEBUG) printf("try get one tmp_pid=%d\n",tmp_pid);
+			//if(DEBUG)
+			       	printf("try get one tmp_pid=%d\n",tmp_pid);
 			for (i = 0; i < max_running; i++){     // get the client id
 				if (ID[i] == tmp_pid){
 					workcnt--;
@@ -547,9 +549,10 @@ int work() {
 				workcnt++;
 				ID[i] = fork();                                   // start to fork
 				if (ID[i] == 0) {
-					if (DEBUG){
-						write_log("Judging solution %d", runid);
-						write_log("<<=sid=%d===clientid=%d==>>\n", runid, i);
+					//if (DEBUG)
+					{
+						printf("Judging solution %d", runid);
+						printf("<<=sid=%d===clientid=%d==>>\n", runid, i);
 					}
 					run_client(runid, i);    // if the process is the son, run it
 					workcnt--;
@@ -633,35 +636,43 @@ int already_running() {
 int daemon_init(void)
 
 {
+	printf("start daemon_init\n");
 	pid_t pid;
-
+	printf("pid : %d\n", pid);
 	if ((pid = fork()) < 0)
 		return (-1);
 
 	else if (pid != 0)
 		exit(0); /* parent exit */
-
+	printf("alive, pid check\n");
 	/* child continues */
-
+	printf("start : sesseion leader\n");
 	setsid(); /* become session leader */
-
+	printf("start : cd\n");
 	chdir(oj_home); /* change working directory */
-
+	printf("start : umask\n");
 	umask(0); /* clear file mode creation mask */
-
-	close(0); /* close stdin */
-	close(1); /* close stdout */
-	
-	close(2); /* close stderr */
-	
-	int fd = open( "/dev/null", O_RDWR );
+	printf("start : close 0\n");
+	//close(0); /* close stdin */
+	printf("start : close 1\n");
+	//close(1); /* close stdout */
+	printf("start : close 2\n");
+	//close(2); /* close stderr */
+	printf("start : open /dev/null\n");
+	/*int fd = open( "/dev/null", O_RDWR );
+	//int fd = open("check.log",O_RDWR | O_CREAT);
+	printf("start : dup2, fd : %d\n",fd);
+	printf("dup2 : 0\n");
 	dup2( fd, 0 );
+	printf("dup2 : 1\n");
 	dup2( fd, 1 );
+	printf("dup2 : 2\n");
 	dup2( fd, 2 );
 	if ( fd > 2 ){
+		printf("close fd\n");
 		close( fd );
-	}
-
+	}*/
+	printf("finish_init_daemon\n");
 	return (0);
 }
 void turbo_mode2(){
@@ -675,6 +686,7 @@ void turbo_mode2(){
 
 }
 int main(int argc, char** argv) {
+	printf("start judged argc : %d\n",argc);
 	int oj_udp_ret=0;
 	DEBUG = (argc > 2);
 	ONCE = (argc > 3);
@@ -683,16 +695,19 @@ int main(int argc, char** argv) {
 	else
 		strcpy(oj_home, "/home/judge");
 	chdir(oj_home);    // change the dir
-
+	printf("check point 1\n");
 	sprintf(lock_file,"%s/etc/judge.pid",oj_home);
+	printf("start daemon\n");
 	if (!DEBUG)
 		daemon_init();
+	printf("end daemon_init()");
 	if ( already_running()) {
 		syslog(LOG_ERR | LOG_DAEMON,
 				"This daemon program is already running!\n");
 		printf("%s already has one judged on it!\n",oj_home);
 		return 1;
 	}
+	printf("end set daemon\n");
 	if(!DEBUG)
 		system("/sbin/iptables -A OUTPUT -m owner --uid-owner judge -j DROP");
 //	struct timespec final_sleep;
@@ -701,7 +716,9 @@ int main(int argc, char** argv) {
 #ifdef _mysql_h
 	init_mysql_conf();	// set the database info
 #endif
+	printf("check_udp\n");
 	if(oj_udp){
+		printf("start_udp_system");
 		oj_udp_fd = socket(AF_INET, SOCK_DGRAM, 0);
 		if(oj_udp_fd<0) 
 			printf("udp fd open failed! \n");		
@@ -721,9 +738,11 @@ int main(int argc, char** argv) {
 		if(oj_udp_ret<0) 
 			printf("udp fd open failed! \n");
 	}
+	printf("finish_udp and start_siganl");
 	signal(SIGQUIT, call_for_exit);
 	signal(SIGINT, call_for_exit);
 	signal(SIGTERM, call_for_exit);
+	printf("finish_signal");
 	int j = 1;
 	int n = 0;
 	while (!STOP) {			// start to run until call for exit

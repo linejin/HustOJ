@@ -1,0 +1,235 @@
+dup2 : 2
+close fd
+finish_init_daemon
+end daemon_init()end set daemon
+check_udp
+sh: 1: redis-cli: not found
+start_udp_systemfinish_udp and start_siganlfinish_signalworkcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
+recieve data fail!
+sh: 1: redis-cli: not found
+workcnt:0
